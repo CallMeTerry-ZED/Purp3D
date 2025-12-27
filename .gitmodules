@@ -1,0 +1,8 @@
+[submodule "thirdparty/bgfx.cmake"]
+	path = thirdparty/bgfx.cmake
+	url = https://github.com/CallMeTerry-ZED/bgfx.cmake.git
+	branch = master
+[submodule "thirdparty/glfw"]
+	path = thirdparty/glfw
+	url = https://github.com/CallMeTerry-ZED/glfw.git
+	branch = master

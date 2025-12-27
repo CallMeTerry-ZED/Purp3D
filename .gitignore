@@ -1,0 +1,16 @@
+#--------------
+# Build Folder
+#--------------
+build/
+
+#--------------------------------
+# Visual Studio files and folder
+#--------------------------------
+.vs/
+.vscode/
+**.sln
+**.vcxproj
+**.vcxproj.filters
+**.vcxproj.user
+**.csproj
+
