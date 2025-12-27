@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(Purp3D LANGUAGES CXX)
+project(Purp3D LANGUAGES C CXX)
 
 # -----------------------------
 # Platform name
@@ -52,15 +52,14 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 # -----------------------------
 # Options
 # -----------------------------
-set(BGFX_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
-set(BGFX_BUILD_TOOLS OFF CACHE BOOL "" FORCE)
-set(BGFX_INSTALL OFF CACHE BOOL "" FORCE)
 
 # -----------------------------
 # Third-party libraries
 # -----------------------------
-add_subdirectory(thirdparty/bgfx.cmake)
 add_subdirectory(thirdparty/glfw)
+add_subdirectory(thirdparty/glad)
+add_subdirectory(thirdparty/glm)
+add_subdirectory(thirdparty/stb)
 
 # -----------------------------
 # Source files (GLOB_RECURSIVE)
@@ -102,19 +101,19 @@ target_include_directories(Purp3D PRIVATE
     engine/include
     game/include
     thirdparty/glfw/include
-    thirdparty/bgfx.cmake/bgfx/include
-    thirdparty/bgfx.cmake/bx/include
-    thirdparty/bgfx.cmake/bimg/include
+    thirdparty/glad/include
+    thirdparty/glm
+    thirdparty/stb/include
 )
 
 # -----------------------------
 # Link libraries
 # -----------------------------
 target_link_libraries(Purp3D PRIVATE
-    bgfx
-    bx
-    bimg
     glfw
+    glad
+    glm
+    stb
 )
 
 # -----------------------------
