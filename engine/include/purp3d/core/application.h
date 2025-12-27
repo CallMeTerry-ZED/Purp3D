@@ -3,6 +3,8 @@
 
 #include "purp3d/core/core.h"
 #include "purp3d/core/applicationspecification.h"
+#include "purp3d/core/window.h"
+#include <memory>
 
 namespace Purp3D
 {
@@ -16,9 +18,12 @@ namespace Purp3D
 		void Stop();
 
 		static Application& Get();
+		static float GetTime();
+		std::shared_ptr<Window> GetWindow() const { return m_Window; }
 
 	private:
 		ApplicationSpecification m_spec;
+		std::shared_ptr<Window> m_Window;
 		bool m_Running = false;
 	};
 

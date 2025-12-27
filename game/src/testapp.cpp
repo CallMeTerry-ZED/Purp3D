@@ -19,6 +19,8 @@ Purp3D::Application* Purp3D::CreateApplication()
 {
 	Purp3D::ApplicationSpecification spec;
 	spec.Name = "Untitled Game";
+	spec.WindowSpec.Width = 1280;
+	spec.WindowSpec.Height = 720;
 
 	return new TestApp(spec);
 }
