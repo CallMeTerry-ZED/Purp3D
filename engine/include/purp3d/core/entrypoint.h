@@ -7,9 +7,10 @@ extern Purp3D::Application* Purp3D::CreateApplication();
 
 int main(int argc, char** argv)
 {
-	auto app = Purp3D::CreateApplication();
+	Purp3D::Application* app = Purp3D::CreateApplication();
 	app->Run();
 	delete app;
+	return 0;
 }
 
 #endif

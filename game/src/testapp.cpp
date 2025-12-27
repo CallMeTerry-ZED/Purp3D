@@ -4,7 +4,7 @@
 class TestApp : public Purp3D::Application
 {
 public:
-	TestApp()
+	TestApp(const Purp3D::ApplicationSpecification& spec) : Application(spec)
 	{
 		std::printf("Sandbox created\n");
 	}
@@ -17,5 +17,8 @@ public:
 
 Purp3D::Application* Purp3D::CreateApplication()
 {
-	return new TestApp();
+	Purp3D::ApplicationSpecification spec;
+	spec.Name = "Untitled Game";
+
+	return new TestApp(spec);
 }
