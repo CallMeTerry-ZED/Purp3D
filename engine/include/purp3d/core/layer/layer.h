@@ -14,6 +14,9 @@ namespace Purp3D
 		Layer(const char* name = "Layer");
 		virtual ~Layer() = default;
 
+		virtual void OnAttach() {}
+		virtual void OnDetach() {}
+
 		// Called when an event is dispatched to this layer
 		virtual void OnEvent(Event& event) {}
 
@@ -23,17 +26,9 @@ namespace Purp3D
 		// Called every frame for rendering
 		virtual void OnRender() {}
 
-		// Replace this layer with a new one
-		template<std::derived_from<Layer> T, typename... Args>
-		void TransitionTo(Args&&... args)
-		{
-			QueueTransition(std::make_unique<T>(std::forward<Args>(args)...));
-		}
-
 		inline const char* GetName() { return m_DebugName; }
 
 	private:
-		void QueueTransition(std::unique_ptr<Layer> newLayer);
 		const char* m_DebugName;
 	};
 }

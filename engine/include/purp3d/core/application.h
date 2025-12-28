@@ -6,6 +6,7 @@
 #include "purp3d/core/window.h"
 #include "purp3d/core/events/eventqueue.h"
 #include "purp3d/core/layer/layer.h"
+#include "purp3d/core/layer/layerstack.h"
 #include "purp3d/renderer/glutils.h"
 #include <glm/glm.hpp>
 #include <memory>
@@ -23,14 +24,31 @@ namespace Purp3D
 		void Run();
 		void Stop();
 
-		template<typename TLayer, typename... Args>
-		requires(std::is_base_of_v<Layer, TLayer>)
-		TLayer* PushLayer(Args&&... args)
+		template<typename T, typename... Args>
+		T* PushLayer(Args&&... args)
 		{
-			auto layer = std::make_unique<TLayer>(std::forward<Args>(args)...);
-			TLayer* ptr = layer.get();
-			m_LayerStack.push_back(std::move(layer));
+			auto layer = std::make_unique<T>(std::forward<Args>(args)...);
+			T* ptr = layer.get();
+			m_LayerStack.PushLayer(std::move(layer));
 			return ptr;
+		}
+
+		template<typename T, typename... Args>
+		T* PushOverlay(Args&&... args)
+		{
+			auto overlay = std::make_unique<T>(std::forward<Args>(args)...);
+			T* ptr = overlay.get();
+			m_LayerStack.PushOverlay(std::move(overlay));
+			return ptr;
+		}
+
+		template<typename T, typename... Args>
+		void ReplaceLayer(Layer* oldLayer, Args&&... args)
+		{
+			m_LayerStack.ReplaceLayer(
+				oldLayer,
+				std::make_unique<T>(std::forward<Args>(args)...)
+			);
 		}
 
 		static Application& Get();
@@ -46,7 +64,7 @@ namespace Purp3D
 		std::shared_ptr<Window> m_Window;
 		EventQueue m_EventQueue;
 		bool m_Running = false;
-		std::vector<std::unique_ptr<Layer>> m_LayerStack;
+		LayerStack m_LayerStack;
 
 		friend class Layer;
 		friend class GLUtils;
