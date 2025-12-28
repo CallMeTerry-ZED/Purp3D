@@ -66,6 +66,8 @@ add_subdirectory(thirdparty/stb)
 # -----------------------------
 file(GLOB_RECURSE ENGINE_SRC
     engine/src/*.cpp
+    engine/src/*/*.cpp
+    engine/src/*/*/*.cpp
 )
 
 file(GLOB_RECURSE ENGINE_INC
@@ -117,6 +119,19 @@ target_link_libraries(Purp3D PRIVATE
 )
 
 # -----------------------------
+# Link OpenGL libraries
+# -----------------------------
+if (WIN32)
+    target_link_libraries(Purp3D PRIVATE opengl32)
+elseif (APPLE)
+    find_library(OpenGL_LIBRARY OpenGL)
+    target_link_libraries(Purp3D PRIVATE ${OpenGL_LIBRARY})
+elseif (UNIX)
+    find_package(OpenGL REQUIRED)
+    target_link_libraries(Purp3D PRIVATE OpenGL::GL)
+endif()
+
+# -----------------------------
 # Platform defines
 # -----------------------------
 if (WIN32)
@@ -133,3 +148,14 @@ if (MSVC)
 else()
     target_compile_options(Purp3D PRIVATE -Wall -Wextra -Wpedantic)
 endif()
+
+# -----------------------------
+# Copy shaders next to the executable
+# -----------------------------
+add_custom_command(
+    TARGET Purp3D
+    POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+        ${CMAKE_SOURCE_DIR}/shaders
+        $<TARGET_FILE_DIR:Purp3D>/shaders
+)

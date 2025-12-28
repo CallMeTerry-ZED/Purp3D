@@ -1,4 +1,6 @@
+#define INCLUDE_ENTRY_POINT
 #include "purp3d.h"
+#include "testapplayer.h"
 #include <cstdio>
 
 class TestApp : public Purp3D::Application
@@ -6,7 +8,7 @@ class TestApp : public Purp3D::Application
 public:
 	TestApp(const Purp3D::ApplicationSpecification& spec) : Application(spec)
 	{
-		std::printf("Sandbox created\n");
+		PushLayer<TestAppLayer>();
 	}
 
 	~TestApp()

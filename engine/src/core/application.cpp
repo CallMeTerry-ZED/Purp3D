@@ -37,6 +37,8 @@ namespace Purp3D
 		);
 
 		m_Window->Create();
+
+		GLUtils::InitOpenGLDebugMessageCallback();
 	}
 
 	Application::~Application()
@@ -70,6 +72,16 @@ namespace Purp3D
 			float timestep = glm::clamp(currentTime - lastTime, 0.001f, 0.1f);
 			lastTime = currentTime;
 
+			for (auto& layer : m_LayerStack)
+			{
+				layer->OnUpdate(timestep);
+			}
+
+			for (auto& layer : m_LayerStack)
+			{
+				layer->OnRender();
+			}
+
 			m_Window->Update();
 		}
 	}
@@ -84,6 +96,15 @@ namespace Purp3D
 		while (!m_EventQueue.Empty())
 		{
 			auto event = m_EventQueue.Pop();
+
+			for (auto it = m_LayerStack.rbegin(); it != m_LayerStack.rend(); ++it)
+			{
+				(*it)->OnEvent(*event);
+				if (event->Handled)
+				{
+					break;
+				}
+			}
 		}
 	}
 
