@@ -62,14 +62,16 @@ add_subdirectory(thirdparty/glfw)
 add_subdirectory(thirdparty/glad)
 add_subdirectory(thirdparty/glm)
 add_subdirectory(thirdparty/stb)
+add_subdirectory(thirdparty/imgui)
 
 set_target_properties(glfw PROPERTIES FOLDER "Thirdparty")
 set_target_properties(glad PROPERTIES FOLDER "Thirdparty")
 set_target_properties(glm PROPERTIES FOLDER "Thirdparty")
 set_target_properties(stb PROPERTIES FOLDER "Thirdparty")
+set_target_properties(imgui PROPERTIES FOLDER "Thirdparty")
 
 # -----------------------------
-# Source files (GLOB_RECURSIVE)
+# Source files
 # TODO: DONT DO THIS, FIX ASAP
 # -----------------------------
 file(GLOB_RECURSE ENGINE_SRC
@@ -125,6 +127,7 @@ target_include_directories(Purp3D PRIVATE
     thirdparty/glad/include
     thirdparty/glm
     thirdparty/stb/include
+    thirdparty/imgui
 )
 
 # -----------------------------
@@ -135,6 +138,7 @@ target_link_libraries(Purp3D PRIVATE
     glad
     glm
     stb
+    imgui
 )
 
 # -----------------------------

@@ -6,3 +6,7 @@
 	path = thirdparty/glm
 	url = https://github.com/CallMeTerry-ZED/glm.git
 	branch = master
+[submodule "thirdparty/imgui"]
+	path = thirdparty/imgui
+	url = https://github.com/CallMeTerry-ZED/imgui.git
+	branch = docking
