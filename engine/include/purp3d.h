@@ -10,6 +10,11 @@
 #include "purp3d/core/window.h"
 #include "purp3d/core/windowspecification.h"
 #include "purp3d/core/events/event.h"
+#include "purp3d/core/events/eventdispatcher.h"
+#include "purp3d/core/events/eventqueue.h"
+#include "purp3d/core/events/windowevents.h"
+#include "purp3d/core/events/keyevents.h"
+#include "purp3d/core/events/mouseevents.h"
 ///////////////////////////////////
 /////////// ENTRY POINT ///////////
 //////////////////////////////////
