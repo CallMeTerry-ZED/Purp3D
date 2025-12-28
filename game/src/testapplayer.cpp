@@ -88,6 +88,18 @@ void TestAppLayer::OnRender()
 	glDrawArrays(GL_TRIANGLES, 0, 3);
 }
 
+void TestAppLayer::OnImGuiRender()
+{
+	ImGui::Begin("Test App Layer");
+	ImGui::Text("Mouse Position: (%.1f, %.1f)", m_MousePosition.x, m_MousePosition.y);
+	ImGui::Text("Flame Position: (%.2f, %.2f)", m_FlamePosition.x, m_FlamePosition.y);
+	ImGui::End();
+
+	ImGui::Begin("Test App Layer");
+	ImGui::Text("Hello there from Purp3D");
+	ImGui::End();
+}
+
 bool TestAppLayer::OnMouseButtonPressed(Purp3D::MouseButtonPressedEvent& event)
 {
 	glm::vec2 framebufferSize = Purp3D::Application::Get().GetFramebufferSize();

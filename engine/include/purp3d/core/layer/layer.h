@@ -26,6 +26,9 @@ namespace Purp3D
 		// Called every frame for rendering
 		virtual void OnRender() {}
 
+		// Called every frame for ImGui rendering
+		virtual void OnImGuiRender() {}
+
 		inline const char* GetName() { return m_DebugName; }
 
 	private:

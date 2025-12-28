@@ -16,6 +16,8 @@
 #include "purp3d/core/events/keyevents.h"
 #include "purp3d/core/events/mouseevents.h"
 #include "purp3d/core/layer/layer.h"
+#include "purp3d/core/layer/layerstack.h"
+#include "purp3d/core/layer/imgui/imguilayer.h"
 
 ///////////////////////////////////
 //////////// RENDERER ////////////
@@ -39,5 +41,6 @@
 /////// THIRDPARTY INCLUDES ///////
 //////////////////////////////////
 #include <glm/glm.hpp>
+#include <imgui.h>
 
 #endif

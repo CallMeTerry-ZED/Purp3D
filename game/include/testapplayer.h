@@ -14,6 +14,7 @@ public:
 
 	virtual void OnUpdate(float ts) override;
 	virtual void OnRender() override;
+	virtual void OnImGuiRender() override;
 
 private:
 	bool OnMouseButtonPressed(Purp3D::MouseButtonPressedEvent& event);

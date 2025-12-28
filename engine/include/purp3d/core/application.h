@@ -7,6 +7,7 @@
 #include "purp3d/core/events/eventqueue.h"
 #include "purp3d/core/layer/layer.h"
 #include "purp3d/core/layer/layerstack.h"
+#include "purp3d/core/layer/imgui/imguilayer.h"
 #include "purp3d/renderer/glutils.h"
 #include <glm/glm.hpp>
 #include <memory>
@@ -64,9 +65,11 @@ namespace Purp3D
 		std::shared_ptr<Window> m_Window;
 		EventQueue m_EventQueue;
 		bool m_Running = false;
+		ImGuiLayer* m_ImGuiLayer;
 		LayerStack m_LayerStack;
 
 		friend class Layer;
+		friend class ImGuiLayer;
 		friend class GLUtils;
 	};
 

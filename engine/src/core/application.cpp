@@ -38,6 +38,8 @@ namespace Purp3D
 
 		m_Window->Create();
 
+		m_ImGuiLayer = PushOverlay<ImGuiLayer>();
+
 		GLUtils::InitOpenGLDebugMessageCallback();
 	}
 
@@ -81,6 +83,13 @@ namespace Purp3D
 			{
 				layer->OnRender();
 			}
+
+			m_ImGuiLayer->Begin();
+			for (auto& layer : m_LayerStack)
+			{
+				layer->OnImGuiRender();
+			}
+			m_ImGuiLayer->End();
 
 			m_Window->Update();
 		}
