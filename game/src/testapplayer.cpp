@@ -1,7 +1,7 @@
 #include"purp3d.h"
 #include "testapplayer.h"
 
-TestAppLayer::TestAppLayer()
+TestAppLayer::TestAppLayer() : Layer("TestAppLayer")
 {
 	std::printf("Created new TestAppLayer!\n");
 

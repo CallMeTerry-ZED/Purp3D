@@ -3,6 +3,11 @@
 
 namespace Purp3D
 {
+	Layer::Layer(const char* debugName) : m_DebugName(debugName)
+	{
+
+	}
+
 	void Layer::QueueTransition(std::unique_ptr<Layer> newLayer)
 	{
 		// TODO: don't do this

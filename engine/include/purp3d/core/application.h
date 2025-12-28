@@ -23,11 +23,14 @@ namespace Purp3D
 		void Run();
 		void Stop();
 
-		template<typename TLayer>
+		template<typename TLayer, typename... Args>
 		requires(std::is_base_of_v<Layer, TLayer>)
-		void PushLayer()
+		TLayer* PushLayer(Args&&... args)
 		{
-			m_LayerStack.push_back(std::make_unique<TLayer>());
+			auto layer = std::make_unique<TLayer>(std::forward<Args>(args)...);
+			TLayer* ptr = layer.get();
+			m_LayerStack.push_back(std::move(layer));
+			return ptr;
 		}
 
 		static Application& Get();

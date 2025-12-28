@@ -8,7 +8,8 @@ class TestApp : public Purp3D::Application
 public:
 	TestApp(const Purp3D::ApplicationSpecification& spec) : Application(spec)
 	{
-		PushLayer<TestAppLayer>();
+		auto* testLayer = PushLayer<TestAppLayer>();
+		std::printf("Current layer debug name: %s\n", testLayer->GetName());
 	}
 
 	~TestApp()

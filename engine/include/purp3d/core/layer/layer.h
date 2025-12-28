@@ -11,6 +11,7 @@ namespace Purp3D
 	class PURP_API Layer
 	{
 	public:
+		Layer(const char* name = "Layer");
 		virtual ~Layer() = default;
 
 		// Called when an event is dispatched to this layer
@@ -29,8 +30,11 @@ namespace Purp3D
 			QueueTransition(std::make_unique<T>(std::forward<Args>(args)...));
 		}
 
+		inline const char* GetName() { return m_DebugName; }
+
 	private:
 		void QueueTransition(std::unique_ptr<Layer> newLayer);
+		const char* m_DebugName;
 	};
 }
 
