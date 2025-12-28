@@ -2,6 +2,7 @@
 #define WINDOW_SPECIFICATION_H
 
 #include "purp3d/core/core.h"
+#include "purp3d/core/events/event.h"
 
 namespace Purp3D
 {

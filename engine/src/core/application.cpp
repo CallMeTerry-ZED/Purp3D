@@ -1,4 +1,5 @@
 #include "purp3d/core/application.h"
+#include <glm/glm.hpp>
 #include <cstdio>
 #include <cassert>
 #include <iostream>
@@ -27,6 +28,14 @@ namespace Purp3D
 		}
 
 		m_Window = std::make_shared<Window>(m_spec.WindowSpec);
+
+		m_Window->SetEventCallback(
+			[this](std::unique_ptr<Event> event)
+			{
+				m_EventQueue.Push(std::move(event));
+			}
+		);
+
 		m_Window->Create();
 	}
 
@@ -43,22 +52,44 @@ namespace Purp3D
 	{
 		m_Running = true;
 
+		float lastTime = GetTime();
+
 		while (m_Running)
 		{
 			glfwPollEvents();
+
+			ProcessEvents();
 
 			if (m_Window->ShouldClose())
 			{
 				Stop();
 				break;
 			}
+
+			float currentTime = GetTime();
+			float timestep = glm::clamp(currentTime - lastTime, 0.001f, 0.1f);
+			lastTime = currentTime;
+
+			m_Window->Update();
 		}
-		m_Window->Update();
 	}
 
 	void Application::Stop()
 	{
 		m_Running = false;
+	}
+
+	void Application::ProcessEvents()
+	{
+		while (!m_EventQueue.Empty())
+		{
+			auto event = m_EventQueue.Pop();
+		}
+	}
+
+	glm::vec2 Application::GetFramebufferSize() const
+	{
+		return m_Window->GetFramebufferSize();
 	}
 
 	Application& Application::Get()

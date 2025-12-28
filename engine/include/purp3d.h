@@ -9,6 +9,7 @@
 #include "purp3d/core/applicationspecification.h"
 #include "purp3d/core/window.h"
 #include "purp3d/core/windowspecification.h"
+#include "purp3d/core/events/event.h"
 ///////////////////////////////////
 /////////// ENTRY POINT ///////////
 //////////////////////////////////

@@ -4,7 +4,11 @@
 #include "purp3d/core/core.h"
 #include "purp3d/core/applicationspecification.h"
 #include "purp3d/core/window.h"
+#include "purp3d/core/events/eventqueue.h"
+#include <glm/glm.hpp>
 #include <memory>
+#include <vector>
+
 
 namespace Purp3D
 {
@@ -19,11 +23,16 @@ namespace Purp3D
 
 		static Application& Get();
 		static float GetTime();
+		glm::vec2 GetFramebufferSize() const;
 		std::shared_ptr<Window> GetWindow() const { return m_Window; }
 
 	private:
+		void ProcessEvents();
+
+		static Application* s_Instance;
 		ApplicationSpecification m_spec;
 		std::shared_ptr<Window> m_Window;
+		EventQueue m_EventQueue;
 		bool m_Running = false;
 	};
 
