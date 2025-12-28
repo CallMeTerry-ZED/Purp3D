@@ -3,7 +3,7 @@
 
 TestAppLayer::TestAppLayer()
 {
-	std::printf("Created new TestAppLayer!");
+	std::printf("Created new TestAppLayer!\n");
 
 	// Create shaders
 	m_Shader = Purp3D::Shader::CreateGraphicsShader("shaders/fullscreen.vert.glsl", "shaders/flame.frag.glsl");
@@ -52,7 +52,7 @@ TestAppLayer::~TestAppLayer()
 
 void TestAppLayer::OnEvent(Purp3D::Event& event)
 {
-	std::printf("{}", event.GetName());
+	std::printf("{%s}\n", event.GetName());
 
 	Purp3D::EventDispatcher dispatcher(event);
 	dispatcher.Dispatch<Purp3D::MouseButtonPressedEvent>([this](Purp3D::MouseButtonPressedEvent& e) { return OnMouseButtonPressed(e); });
@@ -99,19 +99,19 @@ bool TestAppLayer::OnMouseButtonPressed(Purp3D::MouseButtonPressedEvent& event)
 
 	m_FlamePosition = -normalizedMousePos;
 
-	return true;
+	return false;
 }
 
 bool TestAppLayer::OnMouseMoved(Purp3D::MouseMovedEvent& event)
 {
-	m_MousePosition = { static_cast<float>(event.MouseX), static_cast<float>(event.MouseY) };
+	m_MousePosition = { event.MouseX, event.MouseY };
 
-	return true;
+	return false;
 }
 
 bool TestAppLayer::OnWindowClosed(Purp3D::WindowCloseEvent& event)
 {
-	std::printf("Window Closed!");
+	std::printf("Window Closed!\n");
 
-	return true;
+	return false;
 }

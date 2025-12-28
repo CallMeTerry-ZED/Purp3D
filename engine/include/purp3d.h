@@ -24,6 +24,10 @@
 #include "purp3d/renderer/renderer.h"
 #include "purp3d/renderer/shader.h"
 
+// This is defined by the client so we only include the entry point if requested
+// This allows the engine to be used as a library without a predefined entry point
+// so applications can define their own main entry point or use our entry point by defining INCLUDE_ENTRY_POINT
+// Before including purp3d.h, this also allows us to avoid having multiple entry points in all files that include purp3d.h
 #ifdef INCLUDE_ENTRY_POINT
 ///////////////////////////////////
 /////////// ENTRY POINT ///////////

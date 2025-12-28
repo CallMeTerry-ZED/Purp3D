@@ -3,6 +3,13 @@ cmake_minimum_required(VERSION 3.10)
 project(Purp3D LANGUAGES C CXX)
 
 # -----------------------------
+# C++ Standard
+# -----------------------------
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+# -----------------------------
 # Platform name
 # -----------------------------
 if (WIN32)
@@ -28,7 +35,9 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY
     ${CMAKE_BINARY_DIR}/lib/${PURP_PLATFORM}
 )
 
-# Visual Studio / multi-config generators
+# ---------------------------------------------
+# Visual Studio / Multi-Config Generators
+# ---------------------------------------------
 foreach(CONFIG ${CMAKE_CONFIGURATION_TYPES})
     string(TOUPPER ${CONFIG} CONFIG)
     set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_${CONFIG}
@@ -43,13 +52,6 @@ foreach(CONFIG ${CMAKE_CONFIGURATION_TYPES})
 endforeach()
 
 # -----------------------------
-# C++ Standard
-# -----------------------------
-set(CMAKE_CXX_STANDARD 20)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS OFF)
-
-# -----------------------------
 # Options
 # -----------------------------
 
@@ -61,13 +63,23 @@ add_subdirectory(thirdparty/glad)
 add_subdirectory(thirdparty/glm)
 add_subdirectory(thirdparty/stb)
 
+set_target_properties(glfw PROPERTIES FOLDER "Thirdparty")
+set_target_properties(glad PROPERTIES FOLDER "Thirdparty")
+set_target_properties(glm PROPERTIES FOLDER "Thirdparty")
+set_target_properties(stb PROPERTIES FOLDER "Thirdparty")
+
 # -----------------------------
 # Source files (GLOB_RECURSIVE)
+# TODO: DONT DO THIS, FIX ASAP
 # -----------------------------
 file(GLOB_RECURSE ENGINE_SRC
-    engine/src/*.cpp
+    engine/src/c*.cpp
     engine/src/*/*.cpp
     engine/src/*/*/*.cpp
+    engine/src/*/*/*/*.cpp
+    engine/src/*/*/*/*/*.cpp
+    engine/src/*/*/*/*/*/*.cpp
+    engine/src/*/*/*/*/*/*/*.cpp
 )
 
 file(GLOB_RECURSE ENGINE_INC
@@ -94,6 +106,13 @@ add_executable(Purp3D
 
 set_target_properties(Purp3D PROPERTIES
     OUTPUT_NAME "UntitledGame"
+)
+
+
+source_group(TREE "${CMAKE_CURRENT_SOURCE_DIR}" FILES ${ENGINE_SRC} ${ENGINE_INC} ${GAME_SRC} ${GAME_INC})
+set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT Purp3D)
+set_target_properties(Purp3D PROPERTIES
+    VS_DEBUGGER_WORKING_DIRECTORY "$<TARGET_FILE_DIR:Purp3D>"
 )
 
 # -----------------------------
@@ -149,9 +168,9 @@ else()
     target_compile_options(Purp3D PRIVATE -Wall -Wextra -Wpedantic)
 endif()
 
-# -----------------------------
+# -------------------------------------
 # Copy shaders next to the executable
-# -----------------------------
+# -------------------------------------
 add_custom_command(
     TARGET Purp3D
     POST_BUILD

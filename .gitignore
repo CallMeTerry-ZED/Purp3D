@@ -1,7 +1,7 @@
-#--------------
-# Build Folder
-#--------------
-build/
+#----------------------
+# Project Build Folder
+#----------------------
+project-build/
 
 #--------------------------------
 # Visual Studio files and folder
