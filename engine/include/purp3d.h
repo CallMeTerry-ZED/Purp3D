@@ -18,6 +18,7 @@
 #include "purp3d/core/layer/layer.h"
 #include "purp3d/core/layer/layerstack.h"
 #include "purp3d/core/layer/imgui/imguilayer.h"
+#include "purp3d/core/log/logger.h"
 
 ///////////////////////////////////
 //////////// RENDERER ////////////

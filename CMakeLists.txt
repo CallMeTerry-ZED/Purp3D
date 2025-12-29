@@ -54,6 +54,11 @@ endforeach()
 # -----------------------------
 # Options
 # -----------------------------
+set(SPDLOG_BUILD_EXAMPLE OFF CACHE BOOL "Build spdlog examples" FORCE)
+set(SPDLOG_BUILD_EXAMPLE_HO OFF CACHE BOOL "Build spdlog header-only examples" FORCE)
+set(SPDLOG_BUILD_TESTS OFF CACHE BOOL "Build spdlog tests" FORCE)
+set(SPDLOG_BUILD_TESTS_HO OFF CACHE BOOL "Build spdlog header-only tests" FORCE)
+set(SPDLOG_BUILD_BENCH OFF CACHE BOOL "Build spdlog benchmarks" FORCE)
 
 # -----------------------------
 # Third-party libraries
@@ -63,12 +68,14 @@ add_subdirectory(thirdparty/glad)
 add_subdirectory(thirdparty/glm)
 add_subdirectory(thirdparty/stb)
 add_subdirectory(thirdparty/imgui)
+add_subdirectory(thirdparty/spdlog)
 
 set_target_properties(glfw PROPERTIES FOLDER "Thirdparty")
 set_target_properties(glad PROPERTIES FOLDER "Thirdparty")
 set_target_properties(glm PROPERTIES FOLDER "Thirdparty")
 set_target_properties(stb PROPERTIES FOLDER "Thirdparty")
 set_target_properties(imgui PROPERTIES FOLDER "Thirdparty")
+set_target_properties(spdlog PROPERTIES FOLDER "Thirdparty")
 
 # -----------------------------
 # Source files
@@ -128,6 +135,7 @@ target_include_directories(Purp3D PRIVATE
     thirdparty/glm
     thirdparty/stb/include
     thirdparty/imgui
+    thirdparty/spdlog/include
 )
 
 # -----------------------------
@@ -139,6 +147,7 @@ target_link_libraries(Purp3D PRIVATE
     glm
     stb
     imgui
+    spdlog
 )
 
 # -----------------------------

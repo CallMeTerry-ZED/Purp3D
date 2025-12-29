@@ -10,3 +10,7 @@
 	path = thirdparty/imgui
 	url = https://github.com/CallMeTerry-ZED/imgui.git
 	branch = docking
+[submodule "thirdparty/spdlog"]
+	path = thirdparty/spdlog
+	url = https://github.com/gabime/spdlog.git
+	branch = v1.x
