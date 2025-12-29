@@ -210,3 +210,14 @@ add_custom_command(
         ${CMAKE_SOURCE_DIR}/shaders
         $<TARGET_FILE_DIR:Purp3D>/shaders
 )
+
+# -------------------------------------
+# Copy assets next to the executable
+# -------------------------------------
+add_custom_command(
+    TARGET Purp3D
+    POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+        ${CMAKE_SOURCE_DIR}/game/assets
+        $<TARGET_FILE_DIR:Purp3D>/assets
+)

@@ -25,7 +25,7 @@ namespace Purp3D
 	// TODO: Add file logging and change INFO AND WARN
 	// To be blue and magenta respectively
 
-	// Core log macros
+	// Engine log macros
 	#define PURP_CRITICAL(...)	::Purp3D::Logger::GetPurpLogger()->critical(__VA_ARGS__) //Red
 	#define PURP_ERROR(...)		::Purp3D::Logger::GetPurpLogger()->error(__VA_ARGS__)	 //Red
 	#define PURP_WARN(...)		::Purp3D::Logger::GetPurpLogger()->warn(__VA_ARGS__)	 //Yellow
@@ -39,7 +39,7 @@ namespace Purp3D
 	#define PURP_CLIENT_INFO(...)		::Purp3D::Logger::GetPurpClientLogger()->info(__VA_ARGS__)		//Green
 	#define PURP_CLIENT_TRACE(...)		::Purp3D::Logger::GetPurpClientLogger()->trace(__VA_ARGS__)		//White
 
-	// Client log macros
+	// Server log macros
 	#define PURP_SERVER_CRITICAL(...)	::Purp3D::Logger::GetPurpServerLogger()->critical(__VA_ARGS__)	//Red
 	#define PURP_SERVER_ERROR(...)		::Purp3D::Logger::GetPurpServerLogger()->error(__VA_ARGS__)		//Red
 	#define PURP_SERVER_WARN(...)		::Purp3D::Logger::GetPurpServerLogger()->warn(__VA_ARGS__)		//Yellow

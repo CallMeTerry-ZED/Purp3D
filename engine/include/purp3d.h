@@ -27,6 +27,17 @@
 #include "purp3d/renderer/renderer.h"
 #include "purp3d/renderer/shader.h"
 
+///////////////////////////////////
+//////////// SCRIPTING ////////////
+//////////////////////////////////
+#include "purp3d/scripting/scriptengine.h"
+#include "purp3d/scripting/scriptcontext.h"
+#include "purp3d/scripting/lua/luabindings.h"
+#include "purp3d/scripting/lua/luavm.h"
+#include "purp3d/scripting/lua/bindings/luaenginebindings.h"
+#include "purp3d/scripting/lua/bindings/luaeventbindings.h"
+#include "purp3d/scripting/lua/bindings/lualogbindings.h"
+
 // This is defined by the client so we only include the entry point if requested
 // This allows the engine to be used as a library without a predefined entry point
 // so applications can define their own main entry point or use our entry point by defining INCLUDE_ENTRY_POINT

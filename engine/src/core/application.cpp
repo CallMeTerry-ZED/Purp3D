@@ -38,6 +38,8 @@ namespace Purp3D
 
 		m_Window->Create();
 
+		ScriptEngine::Init();
+
 		m_ImGuiLayer = PushOverlay<ImGuiLayer>();
 
 		GLUtils::InitOpenGLDebugMessageCallback();
@@ -45,6 +47,8 @@ namespace Purp3D
 
 	Application::~Application()
 	{
+		ScriptEngine::Shutdown();
+
 		m_Window->Destroy();
 
 		glfwTerminate();
@@ -73,6 +77,8 @@ namespace Purp3D
 			float currentTime = GetTime();
 			float timestep = glm::clamp(currentTime - lastTime, 0.001f, 0.1f);
 			lastTime = currentTime;
+
+			ScriptEngine::OnUpdate(timestep);
 
 			for (auto& layer : m_LayerStack)
 			{
@@ -105,6 +111,8 @@ namespace Purp3D
 		while (!m_EventQueue.Empty())
 		{
 			auto event = m_EventQueue.Pop();
+
+			ScriptEngine::OnEvent(*event);
 
 			for (auto it = m_LayerStack.rbegin(); it != m_LayerStack.rend(); ++it)
 			{

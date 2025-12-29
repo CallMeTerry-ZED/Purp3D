@@ -9,6 +9,7 @@
 #include "purp3d/core/layer/layerstack.h"
 #include "purp3d/core/layer/imgui/imguilayer.h"
 #include "purp3d/renderer/glutils.h"
+#include "purp3d/scripting/scriptengine.h"
 #include <glm/glm.hpp>
 #include <memory>
 #include <vector>
