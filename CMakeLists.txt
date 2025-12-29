@@ -60,6 +60,17 @@ set(SPDLOG_BUILD_TESTS OFF CACHE BOOL "Build spdlog tests" FORCE)
 set(SPDLOG_BUILD_TESTS_HO OFF CACHE BOOL "Build spdlog header-only tests" FORCE)
 set(SPDLOG_BUILD_BENCH OFF CACHE BOOL "Build spdlog benchmarks" FORCE)
 
+set(SOL2_BUILD_LUA OFF CACHE BOOL "" FORCE)
+set(SOL2_LUA_VERSION "5.4" CACHE STRING "" FORCE)
+set(SOL2_TESTS OFF CACHE BOOL "" FORCE)
+set(SOL2_EXAMPLES OFF CACHE BOOL "" FORCE)
+set(SOL2_INTEROP_EXAMPLES OFF CACHE BOOL "" FORCE)
+set(SOL2_DYNAMIC_LOADING_EXAMPLES OFF CACHE BOOL "" FORCE)
+set(SOL2_DOCS OFF CACHE BOOL "" FORCE)
+set(SOL2_SINGLE OFF CACHE BOOL "" FORCE)
+set(SOL2_SYSTEM_INCLUDE ON CACHE BOOL "" FORCE)
+set(SOL2_ENABLE_INSTALL OFF CACHE BOOL "" FORCE)
+
 # -----------------------------
 # Third-party libraries
 # -----------------------------
@@ -69,6 +80,8 @@ add_subdirectory(thirdparty/glm)
 add_subdirectory(thirdparty/stb)
 add_subdirectory(thirdparty/imgui)
 add_subdirectory(thirdparty/spdlog)
+add_subdirectory(thirdparty/lua)
+add_subdirectory(thirdparty/sol2)
 
 set_target_properties(glfw PROPERTIES FOLDER "Thirdparty")
 set_target_properties(glad PROPERTIES FOLDER "Thirdparty")
@@ -76,6 +89,8 @@ set_target_properties(glm PROPERTIES FOLDER "Thirdparty")
 set_target_properties(stb PROPERTIES FOLDER "Thirdparty")
 set_target_properties(imgui PROPERTIES FOLDER "Thirdparty")
 set_target_properties(spdlog PROPERTIES FOLDER "Thirdparty")
+set_target_properties(lua PROPERTIES FOLDER "Thirdparty")
+set_target_properties(sol2 PROPERTIES FOLDER "Thirdparty")
 
 # -----------------------------
 # Source files
@@ -136,6 +151,8 @@ target_include_directories(Purp3D PRIVATE
     thirdparty/stb/include
     thirdparty/imgui
     thirdparty/spdlog/include
+    thirdparty/lua
+    thirdparty/sol2/include
 )
 
 # -----------------------------
@@ -148,6 +165,8 @@ target_link_libraries(Purp3D PRIVATE
     stb
     imgui
     spdlog
+    lua
+    sol2
 )
 
 # -----------------------------

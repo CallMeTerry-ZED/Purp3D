@@ -12,5 +12,13 @@
 	branch = docking
 [submodule "thirdparty/spdlog"]
 	path = thirdparty/spdlog
-	url = https://github.com/gabime/spdlog.git
+	url = https://github.com/CallMeTerry-ZED/spdlog.git
 	branch = v1.x
+[submodule "thirdparty/sol2"]
+	path = thirdparty/sol2
+	url = https://github.com/CallMeTerry-ZED/sol2.git
+	branch = develop
+[submodule "thirdparty/lua"]
+	path = thirdparty/lua
+	url = https://github.com/CallMeTerry-ZED/lua.git
+	branch = master

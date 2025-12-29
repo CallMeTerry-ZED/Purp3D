@@ -26,7 +26,7 @@ namespace Purp3D
 		ImGui::CreateContext();
 		ImGuiIO& io = ImGui::GetIO(); (void)io;
 
-		std::printf("ImGui context created successfully");
+		std::printf("ImGui context created successfully\n");
 
 		io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard; // Enables the Keyboard's controls
 		//io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad; // Enables the gamepad
@@ -55,7 +55,7 @@ namespace Purp3D
 		ImGui_ImplGlfw_InitForOpenGL(window, true);
 		ImGui_ImplOpenGL3_Init("#version 460");
 
-		std::printf("ImGui initialization complete");
+		std::printf("ImGui initialization complete\n");
 	}
 
 	void ImGuiLayer::OnDetach()
