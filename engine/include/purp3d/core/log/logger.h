@@ -26,11 +26,11 @@ namespace Purp3D
 	// To be blue and magenta respectively
 
 	// Engine log macros
-	#define PURP_CRITICAL(...)	::Purp3D::Logger::GetPurpLogger()->critical(__VA_ARGS__) //Red
-	#define PURP_ERROR(...)		::Purp3D::Logger::GetPurpLogger()->error(__VA_ARGS__)	 //Red
-	#define PURP_WARN(...)		::Purp3D::Logger::GetPurpLogger()->warn(__VA_ARGS__)	 //Yellow
-	#define PURP_INFO(...)		::Purp3D::Logger::GetPurpLogger()->info(__VA_ARGS__)	 //Green
-	#define PURP_TRACE(...)		::Purp3D::Logger::GetPurpLogger()->trace(__VA_ARGS__)	 //White
+	#define PURP_CRITICAL(...)			::Purp3D::Logger::GetPurpLogger()->critical(__VA_ARGS__) //Red
+	#define PURP_ERROR(...)				::Purp3D::Logger::GetPurpLogger()->error(__VA_ARGS__)	 //Red
+	#define PURP_WARN(...)				::Purp3D::Logger::GetPurpLogger()->warn(__VA_ARGS__)	 //Yellow
+	#define PURP_INFO(...)				::Purp3D::Logger::GetPurpLogger()->info(__VA_ARGS__)	 //Green
+	#define PURP_TRACE(...)				::Purp3D::Logger::GetPurpLogger()->trace(__VA_ARGS__)	 //White
 
 	// Client log macros
 	#define PURP_CLIENT_CRITICAL(...)	::Purp3D::Logger::GetPurpClientLogger()->critical(__VA_ARGS__)	//Red

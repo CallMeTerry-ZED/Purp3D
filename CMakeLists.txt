@@ -118,6 +118,10 @@ file(GLOB_RECURSE GAME_INC
     game/include/*.h
 )
 
+file(GLOB_RECURSE LUA_SCRIPTS
+    game/assets/scripts/*.lua
+)
+
 # -----------------------------
 # Executable (single EXE for now)
 # -----------------------------
@@ -133,7 +137,8 @@ set_target_properties(Purp3D PROPERTIES
 )
 
 
-source_group(TREE "${CMAKE_CURRENT_SOURCE_DIR}" FILES ${ENGINE_SRC} ${ENGINE_INC} ${GAME_SRC} ${GAME_INC})
+source_group(TREE "${CMAKE_CURRENT_SOURCE_DIR}" FILES ${ENGINE_SRC} ${ENGINE_INC} ${GAME_SRC} ${GAME_INC} ${LUA_SCRIPTS})
+target_sources(Purp3D PRIVATE ${LUA_SCRIPTS})
 set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT Purp3D)
 set_target_properties(Purp3D PROPERTIES
     VS_DEBUGGER_WORKING_DIRECTORY "$<TARGET_FILE_DIR:Purp3D>"
@@ -203,21 +208,33 @@ endif()
 # -------------------------------------
 # Copy shaders next to the executable
 # -------------------------------------
-add_custom_command(
-    TARGET Purp3D
-    POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E copy_directory
-        ${CMAKE_SOURCE_DIR}/shaders
-        $<TARGET_FILE_DIR:Purp3D>/shaders
-)
+#add_custom_command(
+#    TARGET Purp3D
+#    POST_BUILD
+#    COMMAND ${CMAKE_COMMAND} -E copy_directory
+#        ${CMAKE_SOURCE_DIR}/shaders
+#        $<TARGET_FILE_DIR:Purp3D>/shaders
+#)
 
 # -------------------------------------
 # Copy assets next to the executable
 # -------------------------------------
-add_custom_command(
-    TARGET Purp3D
-    POST_BUILD
+#add_custom_command(
+#    TARGET Purp3D
+#    POST_BUILD
+#    COMMAND ${CMAKE_COMMAND} -E copy_directory
+#        ${CMAKE_SOURCE_DIR}/game/assets
+#        $<TARGET_FILE_DIR:Purp3D>/assets
+#)
+
+# --------------------------------------------
+# copy runtime files next to the executable
+# --------------------------------------------
+add_custom_target(copy_runtime_files ALL
     COMMAND ${CMAKE_COMMAND} -E copy_directory
         ${CMAKE_SOURCE_DIR}/game/assets
         $<TARGET_FILE_DIR:Purp3D>/assets
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+        ${CMAKE_SOURCE_DIR}/shaders
+        $<TARGET_FILE_DIR:Purp3D>/shaders
 )

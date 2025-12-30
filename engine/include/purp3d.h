@@ -19,6 +19,9 @@
 #include "purp3d/core/layer/layerstack.h"
 #include "purp3d/core/layer/imgui/imguilayer.h"
 #include "purp3d/core/log/logger.h"
+#include "purp3d/core/input/input.h"
+#include "purp3d/core/input/keycodes.h"
+#include "purp3d/core/input/mousecodes.h"
 
 ///////////////////////////////////
 //////////// RENDERER ////////////

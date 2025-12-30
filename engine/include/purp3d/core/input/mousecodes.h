@@ -1,0 +1,17 @@
+#ifndef MOUSECODES_H
+#define MOUSECODES_H
+
+#define PURP_MOUSE_BUTTON_1         0
+#define PURP_MOUSE_BUTTON_2         1
+#define PURP_MOUSE_BUTTON_3         2
+#define PURP_MOUSE_BUTTON_4         3
+#define PURP_MOUSE_BUTTON_5         4
+#define PURP_MOUSE_BUTTON_6         5
+#define PURP_MOUSE_BUTTON_7         6
+#define PURP_MOUSE_BUTTON_8         7
+
+#define PURP_MOUSE_BUTTON_LEFT      PURP_MOUSE_BUTTON_1
+#define PURP_MOUSE_BUTTON_RIGHT     PURP_MOUSE_BUTTON_2
+#define PURP_MOUSE_BUTTON_MIDDLE    PURP_MOUSE_BUTTON_3
+
+#endif

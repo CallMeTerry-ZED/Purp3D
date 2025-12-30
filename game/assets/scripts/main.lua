@@ -3,7 +3,6 @@ function purp.start()
 end
 
 function purp.update(dt)
-    purp.clientlog.trace("dt = " .. dt)
 end
 
 function purp.onevent(e)

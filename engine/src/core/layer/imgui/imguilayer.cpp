@@ -85,6 +85,11 @@ namespace Purp3D
 
 		if (io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
 		{
+
+			// Do we really need to use a backup context here
+			// cant we just make the main context current
+			// by using Application::Get().GetWindow()->GetHandle();
+			// maybe using a backup is safer in case of multiple windows?
 			GLFWwindow* backup_current_context = glfwGetCurrentContext();
 			ImGui::UpdatePlatformWindows();
 			ImGui::RenderPlatformWindowsDefault();

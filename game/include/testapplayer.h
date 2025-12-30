@@ -17,17 +17,13 @@ public:
 	virtual void OnImGuiRender() override;
 
 private:
+	bool OnKeyPressed(Purp3D::KeyPressedEvent& event);
 	bool OnMouseButtonPressed(Purp3D::MouseButtonPressedEvent& event);
 	bool OnMouseMoved(Purp3D::MouseMovedEvent& event);
 	bool OnWindowClosed(Purp3D::WindowCloseEvent& event);
 private:
-	uint32_t m_Shader = 0;
-	uint32_t m_VertexArray = 0;
-	uint32_t m_VertexBuffer = 0;
-
 	float m_Time = 0.0f;
 	glm::vec2 m_MousePosition{ 0.0f };
-	glm::vec2 m_FlamePosition{ 0.0f };
 };
 
 #endif
