@@ -2,6 +2,7 @@
 #include "purp3D/scripting/lua/bindings/lualogbindings.h"
 #include "purp3D/scripting/lua/bindings/luaeventbindings.h"
 #include "purp3D/scripting/lua/bindings/luaenginebindings.h"
+#include "purp3d/scripting/lua/bindings/luainputbindings.h"
 
 namespace Purp3D
 {
@@ -12,5 +13,6 @@ namespace Purp3D
 		LuaLogBindings::Register(lua);
 		LuaEventBindings::Register(lua);
 		LuaEngineBindings::Register(lua);
+		LuaInputBindings::Register(lua);
 	}
 }

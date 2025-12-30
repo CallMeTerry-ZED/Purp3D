@@ -24,19 +24,6 @@ void TestAppLayer::OnEvent(Purp3D::Event& event)
 void TestAppLayer::OnUpdate(float ts)
 {
 	m_Time += ts;
-
-	// INPUT POLLING TESTS
-	if (Purp3D::Input::IsKeyPressed(PURP_KEY_TAB))
-	{
-		PURP_CLIENT_TRACE("[Polling] TAB is held");
-	}
-
-	if (Purp3D::Input::IsMouseButtonPressed(PURP_MOUSE_BUTTON_LEFT))
-	{
-		auto pos = Purp3D::Input::GetMousePosition();
-		PURP_CLIENT_TRACE("[Polling] Mouse LMB at {0} {1}", pos.x, pos.y);
-	}
-	// END INPUT POLLING TESTS
 }
 
 void TestAppLayer::OnRender()
@@ -53,10 +40,7 @@ void TestAppLayer::OnImGuiRender()
 
 bool TestAppLayer::OnKeyPressed(Purp3D::KeyPressedEvent& event)
 {
-	if (event.GetKeyCode() == PURP_KEY_TAB)
-	{
-		PURP_CLIENT_TRACE("[Event] TAB pressed (repeat={0})", event.IsRepeat);
-	}
+
 	return false;
 }
 
