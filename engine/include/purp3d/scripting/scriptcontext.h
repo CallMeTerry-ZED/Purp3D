@@ -2,18 +2,11 @@
 #define SCRIPT_CONTEXT_H
 
 #include "purp3d/core/core.h"
+#include "purp3d/core/events/scriptevents.h"
 #include <string>
 
 namespace Purp3D
 {
-	// TODO: Move this to events folder
-	// into its own file scriptevent.h
-	struct PURP_API ScriptEvent
-	{
-		int Type;
-		bool Handled = false;
-	};
-
 	class PURP_API ScriptContext
 	{
 	public:

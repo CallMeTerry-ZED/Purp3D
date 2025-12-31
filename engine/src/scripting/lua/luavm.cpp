@@ -54,8 +54,28 @@ namespace Purp3D
 			return;
 
 		sol::table evt = s_Lua.create_table();
+
 		evt["type"] = event.Type;
 		evt["handled"] = false;
+
+		// ---- Keyboard ----
+		evt["keycode"] = event.KeyCode;
+		evt["repeat"] = event.Repeat;
+
+		// ---- Mouse buttons ----
+		evt["mouse_button"] = event.MouseButton;
+
+		// ---- Mouse movement ----
+		evt["mouse_x"] = event.MouseX;
+		evt["mouse_y"] = event.MouseY;
+
+		// ---- Scroll ----
+		evt["scroll_x"] = event.ScrollX;
+		evt["scroll_y"] = event.ScrollY;
+
+		// ---- Window ----
+		evt["width"] = event.Width;
+		evt["height"] = event.Height;
 
 		fn(evt);
 
