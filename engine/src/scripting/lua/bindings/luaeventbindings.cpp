@@ -22,9 +22,21 @@ namespace Purp3D
 
 		// ---- Helpers ----
 		event["mark_handled"] = [](sol::table evt)
-			{
-				evt["handled"] = true;
-			};
+		{
+			evt["handled"] = true;
+		};
+
+		event["is_key_pressed"] = [](sol::table evt, int keycode)
+		{
+			return evt["type"] == (int)EventType::KeyPressed &&
+				evt.get_or("keycode", -1) == keycode;
+		};
+
+		event["is_key_released"] = [](sol::table evt, int keycode)
+		{
+			return evt["type"] == (int)EventType::KeyReleased &&
+				evt.get_or("keycode", -1) == keycode;
+		};
 
 		purp["event"] = event;
 	}

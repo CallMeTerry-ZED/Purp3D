@@ -14,25 +14,14 @@ function purp.update(dt)
 end
 
 function purp.onevent(e)
-    if e.type == purp.event.KeyPressed then
-        purp.clientlog.info("Key pressed: " .. e.keycode)
-
-        if e.keycode == purp.key.TAB then
-            purp.clientlog.info("TAB pressed via event")
-        end
-
+    if purp.event.is_key_pressed(e, purp.key.ESCAPE) then
+        purp.quit()
         e.handled = true
     end
 
     if e.type == purp.event.MouseMoved then
-        purp.clientlog.info(
-            string.format("Mouse moved: %.1f %.1f", e.mouse_x, e.mouse_y)
-        )
     end
 
     if e.type == purp.event.WindowResize then
-        purp.clientlog.info(
-            string.format("Window resized: %dx%d", e.width, e.height)
-        )
     end
 end
