@@ -1,3 +1,5 @@
+// Copyright (c) 2025-2026 ZED Interactive
+
 #ifndef KEYCODES_H
 #define KEYCODES_H
 

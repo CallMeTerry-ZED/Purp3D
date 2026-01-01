@@ -1,3 +1,5 @@
+// Copyright (c) 2025-2026 ZED Interactive
+
 #ifndef EVENT_QUEUE_H
 #define EVENT_QUEUE_H
 

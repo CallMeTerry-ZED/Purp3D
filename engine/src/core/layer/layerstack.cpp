@@ -1,3 +1,5 @@
+// Copyright (c) 2025-2026 ZED Interactive
+
 #include "purp3d/core/layer/layerstack.h"
 
 namespace Purp3D

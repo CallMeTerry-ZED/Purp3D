@@ -1,3 +1,5 @@
+// Copyright (c) 2025-2026 ZED Interactive
+
 #include "purp3D/scripting/lua/bindings/luaeventbindings.h"
 #include "purp3d/core/events/event.h"
 

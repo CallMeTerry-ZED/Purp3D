@@ -1,3 +1,5 @@
+// Copyright (c) 2025-2026 ZED Interactive
+
 #ifndef LAYER_STACK_H
 #define LAYER_STACK_H
 

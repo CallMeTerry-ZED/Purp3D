@@ -1,3 +1,5 @@
+// Copyright (c) 2025-2026 ZED Interactive
+
 #ifndef TEST_APP_LAYER_H
 #define TEST_APP_LAYER_H
 

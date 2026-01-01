@@ -1,3 +1,5 @@
+// Copyright (c) 2025-2026 ZED Interactive
+
 #ifndef SHADER_H
 #define SHADER_H
 

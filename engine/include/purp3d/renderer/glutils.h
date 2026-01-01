@@ -1,3 +1,5 @@
+// Copyright (c) 2025-2026 ZED Interactive
+
 #ifndef GL_UTILS_H
 #define GL_UTILS_H
 

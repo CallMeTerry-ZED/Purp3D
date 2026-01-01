@@ -1,3 +1,5 @@
+// Copyright (c) 2025-2026 ZED Interactive
+
 #ifndef LOGGER_H
 #define LOGGER_H
 

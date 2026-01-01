@@ -1,3 +1,5 @@
+// Copyright (c) 2025-2026 ZED Interactive
+
 #ifndef LUA_LOG_BINDINGS_H
 #define LUA_LOG_BINDINGS_H
 

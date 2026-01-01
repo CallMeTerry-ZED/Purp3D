@@ -1,3 +1,5 @@
+// Copyright (c) 2025-2026 ZED Interactive
+
 #include "purp3d/renderer/glutils.h"
 #include <format>
 #include <iostream>

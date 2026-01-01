@@ -1,3 +1,5 @@
+// Copyright (c) 2025-2026 ZED Interactive
+
 #include "purp3d/core/layer/imgui/imguilayer.h"
 #include "purp3d/core/application.h"
 #include <imgui.h>

@@ -1,3 +1,5 @@
+// Copyright (c) 2025-2026 ZED Interactive
+
 #ifndef ENTRYPOINT_H
 #define ENTRYPOINT_H
 

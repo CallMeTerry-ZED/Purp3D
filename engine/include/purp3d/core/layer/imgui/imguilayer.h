@@ -1,3 +1,5 @@
+// Copyright (c) 2025-2026 ZED Interactive
+
 #ifndef IMGUI_LAYER_H
 #define IMGUI_LAYER_H
 

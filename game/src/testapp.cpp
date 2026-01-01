@@ -1,3 +1,5 @@
+// Copyright (c) 2025-2026 ZED Interactive
+
 #define INCLUDE_ENTRY_POINT
 #include "purp3d.h"
 #include "testapplayer.h"

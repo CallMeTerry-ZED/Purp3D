@@ -1,3 +1,5 @@
+-- Copyright (c) 2025-2026 ZED Interactive
+
 function purp.start()
     purp.clientlog.info("Hello From lua, Lua has started")
 end

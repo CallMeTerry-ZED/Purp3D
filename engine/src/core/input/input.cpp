@@ -1,3 +1,5 @@
+// Copyright (c) 2025-2026 ZED Interactive
+
 #include "purp3d/core/input/input.h"
 #include "purp3d/core/application.h"
 #include <GLFW/glfw3.h>

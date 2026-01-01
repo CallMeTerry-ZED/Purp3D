@@ -1,3 +1,5 @@
+// Copyright (c) 2025-2026 ZED Interactive
+
 #ifndef SCRIPT_EVENTS_H
 #define SCRIPT_EVENTS_H
 

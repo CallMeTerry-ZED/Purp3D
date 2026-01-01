@@ -1,3 +1,5 @@
+// Copyright (c) 2025-2026 ZED Interactive
+
 #ifndef MOUSE_EVENTS_H
 #define MOUSE_EVENTS_H
 

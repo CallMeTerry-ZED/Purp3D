@@ -1,3 +1,5 @@
+// Copyright (c) 2025-2026 ZED Interactive
+
 #ifndef SCRIPT_ENGINE_H
 #define SCRIPT_ENGINE_H
 

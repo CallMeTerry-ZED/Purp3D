@@ -1,3 +1,5 @@
+// Copyright (c) 2025-2026 ZED Interactive
+
 #include "purp3D/scripting/lua/bindings/luaenginebindings.h"
 #include "purp3d/core/application.h"
 

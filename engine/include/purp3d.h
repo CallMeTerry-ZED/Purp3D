@@ -1,3 +1,5 @@
+// Copyright (c) 2025-2026 ZED Interactive
+
 #ifndef PURP3D_H
 #define PURP3D_H
 

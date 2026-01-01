@@ -1,3 +1,5 @@
+// Copyright (c) 2025-2026 ZED Interactive
+
 #include "purp3d/scripting/lua/bindings/luainputbindings.h"
 #include "purp3d/core/input/input.h"
 #include "purp3d/core/input/keycodes.h"

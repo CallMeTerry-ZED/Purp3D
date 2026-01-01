@@ -1,3 +1,5 @@
+// Copyright (c) 2025-2026 ZED Interactive
+
 #include "purp3d/scripting/lua/luavm.h"
 #include "purp3d/scripting/lua/luabindings.h"
 #include "purp3d/core/log/logger.h"

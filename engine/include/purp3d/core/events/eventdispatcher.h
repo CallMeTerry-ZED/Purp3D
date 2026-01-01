@@ -1,3 +1,5 @@
+// Copyright (c) 2025-2026 ZED Interactive
+
 #ifndef EVENT_DISPATCHER_H
 #define EVENT_DISPATCHER_H
 

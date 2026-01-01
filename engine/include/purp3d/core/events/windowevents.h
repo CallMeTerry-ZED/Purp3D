@@ -1,3 +1,5 @@
+// Copyright (c) 2025-2026 ZED Interactive
+
 #ifndef WINDOW_EVENTS_H
 #define WINDOW_EVENTS_H
 

@@ -1,3 +1,5 @@
+// Copyright (c) 2025-2026 ZED Interactive
+
 #include "purp3d/core/window.h"
 #include "purp3d/core/events/windowevents.h"
 #include "purp3d/core/events/keyevents.h"

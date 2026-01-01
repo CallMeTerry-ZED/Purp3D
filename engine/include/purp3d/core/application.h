@@ -1,3 +1,5 @@
+// Copyright (c) 2025-2026 ZED Interactive
+
 #ifndef APPLICATION_H
 #define APPLICATION_H
 

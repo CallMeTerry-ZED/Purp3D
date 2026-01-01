@@ -1,3 +1,5 @@
+// Copyright (c) 2025-2026 ZED Interactive
+
 #ifndef KEY_EVENTS_H
 #define KEY_EVENTS_H
 
