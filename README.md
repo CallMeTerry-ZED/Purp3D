@@ -86,6 +86,28 @@ end
 The Lua scripting system is fully integrated with the engine's deferred event queue and update loop.  
 Scripts are executed on start, update, and event dispatch automatically.
 
+### Lua Development Setup
+
+For the best Lua scripting experience, we recommend using **Visual Studio Code** or any VS Code-based IDE (VSCodium, Cursor, etc.).
+
+**Install our official VS Code extension for IntelliSense support:**
+
+🔗 [Purp3D VS Code Snippets Extension](https://github.com/CallMeTerry-ZED/Purp3DVSCodeSnipets)
+
+This extension provides:
+- Autocomplete for all `purp.*` API functions
+- IntelliSense tooltips with function signatures
+- Code snippets for common patterns
+- Syntax highlighting for Purp3D-specific Lua code
+
+**Installation:**
+1. Clone or download the extension repository
+2. Open the extension folder in VS Code
+3. Press `F5` to launch a new VS Code window with the extension loaded
+4. Or package it as a `.vsix` and install it manually
+
+This significantly improves the Lua scripting workflow and helps avoid typos in API calls.
+
 ## Planned
 
 Purp3D is under active development. Future plans include:
