@@ -104,4 +104,4 @@ Contributions are welcome! Please read our [Contributing Guidelines](CONTRIBUTIN
 
 ## License
 
-This project is licensed under the MIT License – see [LICENSE](https://github.com/CallMeTerry-ZED/Purp3D/blob/main/LICENSE)
+This project is licensed under the MIT License – see [LICENSE](LICENSE)
