@@ -98,6 +98,10 @@ Purp3D is under active development. Future plans include:
 The engine is designed to allow future expansion without breaking existing Lua workflows.  
 Lua is the main scripting language and will be supported long term.
 
+## Contributing
+
+Contributions are welcome! Please read our [Contributing Guidelines](CONTRIBUTING.md) before submitting pull requests.
+
 ## License
 
 This project is licensed under the MIT License – see [LICENSE](https://github.com/CallMeTerry-ZED/Purp3D/blob/main/LICENSE)
